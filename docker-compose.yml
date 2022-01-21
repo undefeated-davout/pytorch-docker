@@ -1,0 +1,20 @@
+version: '3.8'
+services:
+  app:
+    # build:
+    #   context: ./
+    #   dockerfile: ./custom/Dockerfile
+    image: undefeateddavout/pytorch-docker
+    container_name: pytorch-docker.app
+    tty: true
+    ports:
+      - "8888:8888"
+    volumes:
+      - ./custom/workspace:/workspace
+    # deploy:
+    #   resources:
+    #     reservations:
+    #       devices:
+    #         - driver: nvidia
+    #           count: all
+    #           capabilities: [gpu]
